@@ -1,0 +1,71 @@
+// Variables
+@bg-color: #000;
+@text-color: #fff;
+@hover-color: #ddd;
+@active-color: #fff;
+@navbar-padding: 0rem 1rem;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: @bg-color;
+  padding: @navbar-padding;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100vw;
+  //overflow-x: auto;
+  height: 52px;
+
+
+  @media (max-width: 600px) {
+    padding: 0.5rem 1rem;
+  }
+}
+
+.logo {
+}
+
+
+.nav-items {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: nowrap;
+
+  @media (max-width: 600px) {
+    gap: 1rem;
+  }
+}
+.logoImg{
+  height: 55px;
+  width: 152px;
+}
+
+.nav-item {
+  color: @text-color;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+
+  &:hover {
+    color: @hover-color;
+  }
+
+  &.active {
+    color: @active-color;
+    font-weight: 600;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: @active-color;
+    }
+  }
+}

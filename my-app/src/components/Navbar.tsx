@@ -1,39 +1,33 @@
 import { NavLink } from 'react-router-dom';
+import '../styles/Navbar.less';
+import logo from '../assets/logo.png';
 
 const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
+    { name: 'Login', path: '/' },
+    { name: 'Table', path: '/table' },
 ];
 
 const Navbar: React.FC = () => {
     return (
-        <nav style={styles.nav}>
-            {navItems.map((item) => (
-                <NavLink
-                    key={item.path}
-                    to={item.path}
-                    style={({ isActive }: { isActive: boolean }) => ({
-                        ...styles.link,
-                        color: isActive ? 'blue' : 'black',
-                        fontWeight: isActive ? 'bold' : 'normal',
-                    })}
-                >
-                    {item.name}
-                </NavLink>
-            ))}
+        <nav className="navbar">
+            <div className="logo">
+                <img className={"logoImg"} src={logo} alt="Logo"/>
+            </div>
+            <div className="nav-items">
+                {navItems.map((item) => (
+                    <NavLink
+                        key={item.path}
+                        to={item.path}
+                        className={({isActive}) =>
+                            `nav-item ${isActive ? 'active' : ''}`
+                        }
+                    >
+                        {item.name}
+                    </NavLink>
+                ))}
+            </div>
         </nav>
     );
 };
-
-const styles = {
-    nav: {
-        display: 'flex',
-        gap: '1rem',
-        padding: '1rem',
-    },
-    link: {
-        textDecoration: 'none',
-    },
-} as const;
 
 export default Navbar;
