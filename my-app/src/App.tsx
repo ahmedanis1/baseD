@@ -1,16 +1,26 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import About from './pages/About';
+import Login from './pages/Login';
+import Table from './pages/Table';
+import BookDetail from './pages/BookDetail';
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const App: React.FC = () => {
   return (
       <>
-          {/*<h1>Hello app is loaded</h1>*/}
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/table" element={
+              <ProtectedRoute>
+                <Table/>
+              </ProtectedRoute>
+          } />
+            <Route path="/book/:id" element={
+                <ProtectedRoute>
+                    <BookDetail/>
+                </ProtectedRoute>
+            } />
         </Routes>
       </>
   );
