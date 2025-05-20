@@ -1,0 +1,19 @@
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import About from './pages/About';
+
+const App: React.FC = () => {
+  return (
+      <>
+          {/*<h1>Hello app is loaded</h1>*/}
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </>
+  );
+};
+
+export default App;
