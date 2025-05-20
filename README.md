@@ -46,7 +46,7 @@ also added notification if its save or not
 ![image](https://github.com/user-attachments/assets/3b917666-b15b-4d64-a5f0-ce318ff81f1e)
 and also if something fails
 ![image](https://github.com/user-attachments/assets/5183ec6e-722a-464f-aa7b-1ea5b2a0ed2a)
-review and ratings are saved when you return and these will be lost once the page is reloded
+review and ratings are saved when you return and these will be lost once the page is reloaded
 
 
 ## Instructions for setup and installation
